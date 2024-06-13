@@ -12,10 +12,11 @@ userForm.addEventListener("submit" ,
 
 // Text string checker for palindrome
 function palindromeCheck(word) {
-    let isPalindrome = true;
+    isPalindrome = true;
+    word = word.toUpperCase()
 
-    for(let i = 0 ; i < (word.length / 2) && isPalindrome ; i++) {
-        if (word[i] === word[word.length - i]) {
+    for(let i = 0 ; i < word.length / 2 && isPalindrome ; i++) {
+        if (word[i] !== word[word.length - (i + 1)]) {
             isPalindrome = false;
         }
     }
