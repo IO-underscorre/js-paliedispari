@@ -3,14 +3,18 @@ const outputArea = document.getElementById('output-area');
 
 userForm.addEventListener("submit" , 
     function ()  {
-        const userWord = document.getElementById('text-input').value;
+        const userText = document.getElementById('text-input').value;
+        const userTextNoSpaces = userText.replace(/\s/g, '');
 
-        outputArea.innerHTML = `La parola <strong>${userWord}</strong> `
-        outputArea.innerHTML += palindromeCheck(userWord) ? '<strong>è palindroma</strong>!' : '<strong>non è palindroma</strong>!';
+        console.log(userTextNoSpaces);
+
+        outputArea.innerHTML = `Il testo <strong>${userText}</strong> è una `
+        outputArea.innerHTML += userText === userTextNoSpaces ? 'parola' : 'frase';
+        outputArea.innerHTML += palindromeCheck(userTextNoSpaces) ? ' <strong>palindroma</strong>!' : ' <strong>non palindroma</strong>!';
     }
 );
 
-// Text string checker for palindrome
+// String checker for palindrome
 function palindromeCheck(word) {
     isPalindrome = true;
     word = word.toUpperCase()
