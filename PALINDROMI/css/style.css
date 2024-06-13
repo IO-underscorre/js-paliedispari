@@ -7,3 +7,123 @@
 body {
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
+
+/* Page wrapper */
+.page-wrapper {
+    width: 100%;
+    height: 100vh;
+    background-color: #59aec4;
+    background-image: radial-gradient(#70dfa2 , #59aec4);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    overflow: auto;
+}
+
+.page-wrapper > div {
+    width: 100%;
+    overflow: auto;
+    padding: 35px 0;
+}
+
+/* Content */
+.content {
+    margin: 0 auto;
+    width: 95%;
+    max-width: 800px;
+    padding: 30px;
+    border-radius: 15px;
+    background-color: #ffffff;
+    box-shadow: 0 0 25px #00000080;
+}
+
+/* JS input container */
+#text-form {
+    display: block;
+    width: 100%;
+    display: flex;
+    gap: .5em;
+    margin: 1.5rem 0;
+}
+
+.input-group input:hover , .visual-btn:hover {
+    box-shadow: 0 0 .5em #59aec480;
+    cursor: pointer;
+}
+
+.input-group input:focus , .visual-btn:active {
+    box-shadow: 0 0 .5em #59aec480;
+}
+
+.input-group {
+    position: relative;
+    flex: 1 1;
+    min-width: 10rem;
+}
+
+.input-group input , .visual-btn {
+    height: 2em;
+    padding: 0 .25em;
+    appearance: none;
+    border: 1px solid #59aec4;
+    border-radius: .25em;
+}
+
+.input-group input {
+    width: 100%;
+    background-color: inherit;
+    outline: none !important;
+    color: #59aec4;
+}
+
+.input-group input:focus {
+    border-color: #59aec4;
+}
+
+.input-group label {
+    position: absolute;
+    top: 0;
+    left: .25em;
+    pointer-events: none;
+    transition: transform .1s ease-out;
+    color: #59aec4;
+}
+
+.input-group input:focus + label , .input-group input:user-valid + label , .input-group input:user-invalid + label  {
+    transform: scale(.75) translate(0 , -85%);
+    transform-origin: .5em center;
+    left: 0;
+    font-weight: 700;
+    background-color: #ffffff;
+}
+
+.input-group input:user-valid + label::after {
+    content: '\2713';
+    color: #3a7a15;
+}
+
+.input-group input:user-invalid + label::after {
+    content: '\2717';
+    color: #860516;
+}
+
+.visual-btn {
+    font-weight: 700;
+    background-color: #59aec4;
+    color: #ffffff;
+    flex: 0 1;
+}
+
+.visual-btn:active {
+    color: #59aec4;
+    background-color: #ffffff;
+}
+
+/* JS output container */
+#output-area {
+    font-size: 1.25rem;
+}
+
+#output-area strong {
+    color: #59aec4;
+}
